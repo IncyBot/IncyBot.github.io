@@ -1150,25 +1150,81 @@ section.home.light .social-icons li a:hover {
   margin-right: 1.8rem;
 }
 
-select.portfolio-filter-mobile {
-  font-size: 16px;
-  border-radius: 10px;
-  outline: 0;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
+.portfolio-filter-mobile {
+  font-family: "Rubik", sans-serif; /* Aligns font family with desktop version */
+  font-size: 20px; /* Keeps font size consistent */
+  font-weight: 700; /* Matches the font weight */
+  border: none; /* Removes the border */
+  background-color: #302F4E; /* Set the background color for the dropdown */
+  color: #FFFFFF; /* Set the text color for better contrast */
+  border-radius: 20px; /* Keeps the rounded corners */
+  outline: 0; /* Removes the focus outline */
+  margin-bottom: 30px; /* Space below the dropdown */
+  padding: 15px 30px; /* Adds space inside the dropdown */
+  width: calc(100% - 30px); /* Adjusts the width to allow for padding */
+  -webkit-appearance: none; /* Disables the default dropdown styling */
+  -moz-appearance: none; /* Disables the default dropdown styling */
+  appearance: none; /* Disables the default dropdown styling */
+  position: relative; /* Keeps it in the flow of the document */
+  cursor: pointer; /* Changes cursor to pointer */
+  -webkit-transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+  -o-transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+  transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+  max-width: 360px; /* Limits the width of the dropdown */
+
+}
+
+
+/* Other styles remain the same */
+
+
+/* Adds custom arrow indicator */
+.portfolio-filter-mobile::-ms-expand {
+  display: none; /* Hides the default arrow in IE */
+}
+.portfolio-filter-mobile::after {
+  /* Custom arrow */
+  content: '⌵'; /* You can also use an icon font like FontAwesome if you prefer */
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff; /* Adjust the color to fit your design */
+}
+
+/* Styles for when the user interacts with the select element */
+.portfolio-filter-mobile:hover,
+.portfolio-filter-mobile:focus {
+  color: #FF4C60; /* Color when hovered or focused */
+}
+
+/* Adjustments for options to match the style */
+.portfolio-filter-mobile option {
+  margin: 1em 0.5em;
+  padding: 15px 30px; /* Adds more space around the text */
+  background-color: #302F4E; /* Matches the dropdown background color */
+  color: #FFFFFF; /* Text color for better contrast */
+  border-radius: 20px;
 }
 
 .pf-filter-wrapper {
-  position: relative;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically if needed */
+  position: relative; /* Keeps your position relative for the absolute positioned after element */
 }
 .pf-filter-wrapper:after {
-  content: "";
-  font-family: "FontAwesome";
+  content: "⌵";
+  /* Custom arrow */
+  content: '⌵'; /* You can also use an icon font like FontAwesome if you prefer */
+  font-size: 20px;
   position: absolute;
-  top: 0;
-  right: 20px;
-  color: #000;
+  top: 30%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff; /* Adjust the color to fit your design */
 }
 
 /*=================================================================*/
@@ -2677,7 +2733,7 @@ body {
   }
 
   .pf-filter-wrapper {
-    display: block;
+    display: flex;
   }
 
   .triangle-top-sm:before {
