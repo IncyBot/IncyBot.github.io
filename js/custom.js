@@ -168,9 +168,9 @@ $(window).on('load', function() {
 		 var $newElems = $(newElements).css({ opacity: 0 });
 		 $newElems.imagesLoaded(function() {
 				 setTimeout(function() { // Add a slight delay
-						 $newElems.animate({ opacity: 1 }, 250); // Fade-in effect
+						 $newElems.animate({ opacity: 1 }, 100); // Fade-in effect
 						 $container.isotope('appended', $newElems);
-				 }, 250);
+				 }, 100);
 		 });
  
 		 bolbyPopup();
